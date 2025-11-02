@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Select Seats — {{ movie_name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="fade-in">
+  <header class="topbar">
+    <h1>{{ movie_name }} — {{ theatre }}</h1>
+    <p class="sub">Show: {{ showtime }}</p>
+    <a class="back-link" href="{{ url_for('theatre', movie_name=movie_name) }}">← Back</a>
+  </header>
+
+  <main class="container">
+    <div class="screen">SCREEN</div>
+
+    <form id="seatsForm" action="{{ url_for('payment') }}" method="post">
+      <input type="hidden" name="movie_name" value="{{ movie_name }}">
+      <input type="hidden" name="theatre" value="{{ theatre }}">
+      <input type="hidden" name="showtime" value="{{ showtime }}">
+
+      <div class="seat-grid">
+        {% for seat in seat_grid %}
+          <label class="seat">
+            <input type="checkbox" name="seats" value="{{ seat }}">
+            <span class="seat-label">{{ seat }}</span>
+          </label>
+        {% endfor %}
+      </div>
+
+      <div class="seat-actions">
+        <button id="proceedBtn" class="btn">Proceed to Payment</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    // Visual select toggle (CSS handles styling when checkbox :checked)
+    // Add small fade-out before redirect to payment page
+    const form = document.getElementById('seatsForm');
+    const proceedBtn = document.getElementById('proceedBtn');
+
+    form.addEventListener('submit', (e) => {
+      // Ensure at least one seat selected
+      const selected = Array.from(document.querySelectorAll('input[name="seats"]:checked'));
+      if (selected.length === 0) {
+        e.preventDefault();
+        alert('Please select at least one seat.');
+        return;
+      }
+      // add fade-out animation then submit
+      document.body.classList.add('fade-out');
+      // short delay so user sees animation
+      setTimeout(() => form.submit(), 220);
+      e.preventDefault();
+    });
+  </script>
+</body>
+</html>

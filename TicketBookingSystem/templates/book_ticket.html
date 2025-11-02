@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Movie Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body { font-family: Arial; text-align: center; background: #f2f2f2; }
+        form { background: white; padding: 20px; display: inline-block; margin-top: 50px; border-radius: 10px; }
+        input, select { margin: 10px; padding: 8px; width: 250px; }
+        button { background: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>🎟 Movie Ticket Booking</h1>
+    <form action="/book" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <select name="movie_name" required>
+            <option value="">-- Select Movie --</option>
+            <option value="Avengers: Endgame">Avengers: Endgame</option>
+            <option value="Leo">Leo</option>
+            <option value="Jailer">Jailer</option>
+            <option value="Kalki 2898 AD">Kalki 2898 AD</option>
+        </select><br>
+        <select name="show_time" required>
+            <option value="">-- Select Show Time --</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="1:00 PM">1:00 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="7:00 PM">7:00 PM</option>
+        </select><br>
+        <input type="number" name="tickets" placeholder="No. of Tickets" required><br>
+        <button type="submit">Book Now</button>
+    </form>
+</body>
+</html>

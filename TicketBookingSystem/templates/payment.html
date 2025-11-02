@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Payment — {{ movie_name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="fade-in">
+  <header class="topbar">
+    <h1>Payment</h1>
+    <a class="back-link" href="{{ url_for('seats') }}">← Back (select seats)</a>
+  </header>
+
+  <main class="container">
+    <div class="payment-card">
+      <h2>{{ movie_name }}</h2>
+      <p><strong>Theatre:</strong> {{ theatre }}</p>
+      <p><strong>Show:</strong> {{ showtime }}</p>
+      <p><strong>Seats:</strong> {{ seats|join(', ') }}</p>
+      <p class="amount">Total: ₹<strong>{{ total }}</strong></p>
+
+      <form id="payForm" action="{{ url_for('success') }}" method="post" class="pay-form">
+        <input type="hidden" name="movie_name" value="{{ movie_name }}">
+        <input type="hidden" name="theatre" value="{{ theatre }}">
+        <input type="hidden" name="showtime" value="{{ showtime }}">
+        <input type="hidden" name="seats" value="{{ seats|join(', ') }}">
+        <input type="hidden" name="total" value="{{ total }}">
+
+        <label>Full Name</label>
+        <input name="name" required placeholder="Your full name">
+
+        <label>Email</label>
+        <input name="email" type="email" required placeholder="you@example.com">
+
+        <label>Card Number</label>
+        <input name="card" maxlength="19" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+
+        <div class="card-row">
+          <input name="expiry" placeholder="MM/YY" required>
+          <input name="cvv" maxlength="4" placeholder="CVV" required>
+        </div>
+
+        <button type="submit" class="btn">Pay ₹{{ total }}</button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const payForm = document.getElementById('payForm');
+    payForm.addEventListener('submit', (e) => {
+      document.body.classList.add('fade-out');
+      setTimeout(() => payForm.submit(), 220);
+      e.preventDefault();
+    });
+  </script>
+</body>
+</html>

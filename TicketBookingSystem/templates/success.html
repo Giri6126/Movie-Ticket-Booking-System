@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Booking Success</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="fade-in">
+  <header class="topbar">
+    <h1>Booking Confirmed</h1>
+  </header>
+
+  <main class="container">
+    <div class="ticket-card">
+      <h2>🎉 Enjoy the Show!</h2>
+      <p><strong>Name:</strong> {{ name }}</p>
+      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Movie:</strong> {{ movie_name }}</p>
+      <p><strong>Theatre:</strong> {{ theatre }}</p>
+      <p><strong>Show:</strong> {{ showtime }}</p>
+      <p><strong>Seats:</strong> {{ seats }}</p>
+      <p><strong>Total Paid:</strong> ₹{{ total }}</p>
+      <div class="ticket-actions">
+        <a class="btn" href="{{ url_for('home') }}">Book Another</a>
+        <a href="{{ url_for('download_ticket') }}" class="btn">🎫 Download Ticket</a>
+        <a href="{{ url_for('download_ticket', movie_name=movie_name, theatre_name=theatre_name, show_time=show_time, seats=seats, name=name) }}" class="btn">
+    QR Code 🎫
+</a>
+        
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>

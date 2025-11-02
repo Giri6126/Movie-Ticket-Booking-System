@@ -1,0 +1,131 @@
+/* ---------- Base & layout ---------- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  background: linear-gradient(180deg,#081018 0%, #0d1620 60%, #071018 100%);
+  color: #dbeafe;
+  -webkit-font-smoothing:antialiased;
+  transition: background 0.25s ease;
+  opacity: 1;
+}
+
+/* fade animations for page transitions */
+.fade-in { animation: pageFadeIn .45s ease both; }
+.fade-out { animation: pageFadeOut .25s ease both; }
+@keyframes pageFadeIn { from { opacity: 0; transform: translateY(6px);} to { opacity:1; transform:none; } }
+@keyframes pageFadeOut { from { opacity:1; } to { opacity:0; transform: translateY(-6px);} }
+
+/* topbar */
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 36px;
+  background: linear-gradient(90deg, rgba(255,20,60,0.06), rgba(255,120,0,0.04));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.topbar h1 { margin:0; font-size:1.25rem; color:#ffd6a5; letter-spacing:0.6px; }
+.back-link { color:#cfe8ff; text-decoration:none; font-size:0.95rem; opacity:0.9; }
+
+/* main grid for posters */
+.main-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  gap:26px;
+  padding:40px;
+}
+
+/* poster card */
+.poster-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transform: translateY(0);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.poster-card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(0,0,0,0.75); }
+
+.poster-card img {
+  display:block; width:100%; height:320px; object-fit:cover;
+  filter: saturate(0.95) contrast(1.02);
+}
+.card-body { padding:12px 16px 20px; text-align:center; }
+.card-body h2 { margin:8px 0; font-size:1.1rem; color:#fff; }
+.btn {
+  display:inline-block;
+  background: linear-gradient(90deg,#ff3b3b,#ff8a00);
+  color:#081018; font-weight:700;
+  padding:9px 14px; border-radius:9px; text-decoration:none;
+  border:none; cursor:pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(255,80,80,0.12); }
+
+/* theatre grid */
+.container { width: 92%; max-width: 1100px; margin: 28px auto; }
+.theatre-grid { display:grid; gap:18px; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); }
+.theatre-card {
+  padding:18px; border-radius:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 8px 26px rgba(0,0,0,0.55);
+}
+.theatre-card h3 { margin:0 0 10px 0; color:#ffd6a5; }
+.times { display:flex; flex-wrap:wrap; gap:8px; }
+.time-btn {
+  background: rgba(255,255,255,0.04);
+  color:#dbeafe; border:none; padding:8px 10px; border-radius:8px; cursor:pointer;
+}
+.time-btn:hover { background: linear-gradient(90deg, rgba(255,59,59,0.14), rgba(255,138,0,0.12)); transform: translateY(-3px); }
+
+/* seats */
+.screen {
+  width:70%; margin: 8px auto 18px; background:#0b3b49; color:#dbeafe; padding:8px 0; border-radius:8px;
+  text-align:center; box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+.seat-grid { display:grid; grid-template-columns: repeat(10, 1fr); gap:8px; justify-items:center; padding: 18px 0; }
+.seat { width:44px; height:36px; display:flex; align-items:center; justify-content:center; border-radius:7px;
+  background: linear-gradient(180deg,#111827,#0b1620); color:#cfe8ff; cursor:pointer; user-select:none;
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform .12s ease, box-shadow .12s ease, background .12s;
+}
+.seat input { display:none; }
+.seat input:checked + .seat-label, .seat input:checked + .seat-label:before { /* style with sibling selection below */ }
+.seat:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.6); }
+
+/* using the label's span for checked style */
+.seat > .seat-label { width:100%; text-align:center; }
+.seat input:checked + .seat-label { background: linear-gradient(90deg,#ff8a00,#ff3b3b); color:#051018; border-radius:7px; padding:6px; }
+
+/* small actions area */
+.seat-actions { text-align:center; margin-top:22px; }
+
+/* payment card */
+.payment-card {
+  max-width:720px; margin: 20px auto; padding:22px; border-radius:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+}
+.payment-card h2 { margin:8px 0 6px; color:#ffd6a5; }
+.payment-card p { margin:6px 0; color:#cfe8ff; }
+.pay-form { display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+.pay-form input { padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.03); background:#071219; color:#dbeafe; }
+
+/* card-row small layout */
+.card-row { display:flex; gap:8px; }
+.card-row input { flex:1; }
+
+/* ticket card */
+.ticket-card {
+  max-width:720px; margin: 30px auto; padding:22px; border-radius:12px; text-align:left;
+  background: linear-gradient(180deg,#071018,#0b1620); box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+}
+.ticket-card h2 { color:#ffd6a5; margin-top:0; }
+
+/* responsive */
+@media (max-width:720px){
+  .seat { width:34px; height:30px; font-size:0.9rem; }
+  .poster-card img { height:220px; }
+  .card-body h2 { font-size:1rem; }
+}

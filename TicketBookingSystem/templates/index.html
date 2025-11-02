@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Movie Booking — Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="fade-in">
+  <header class="topbar">
+    <h1>🎬 Movie Ticket Booking</h1>
+  </header>
+
+  <main class="main-grid">
+    {% for m in movies %}
+    <div class="card poster-card">
+      <img src="{{ url_for('static', filename='images/' + m.image) }}" alt="{{ m.name }}">
+      <div class="card-body">
+        <h2>{{ m.name }}</h2>
+        <a class="btn" href="{{ url_for('theatre', movie_name=m.name) }}">Book Now</a>
+      </div>
+    </div>
+    {% endfor %}
+  </main>
+
+  <script>
+    // small entrance animation
+    document.body.classList.add('page-loaded');
+  </script>
+</body>
+</html>
