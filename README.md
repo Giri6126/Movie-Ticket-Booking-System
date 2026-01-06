@@ -64,7 +64,6 @@ Pull requests are welcome!
 If you’d like to suggest improvements or report bugs, feel free to open an issue.
 
 🧠 Author
-
 Girijan
 🎓 B.E. Computer Science (AIML) — Rajalakshmi Institute of Technology
 🎥 Aspiring filmmaker & AI enthusiast
