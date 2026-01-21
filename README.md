@@ -12,7 +12,7 @@ Choose from popular theatres in Chennai
 
 Fill in payment details (demo)
 
-🧾 Download stylish PDF tickets with QR codes
+Download stylish PDF tickets with QR codes
 
 🌙 Modern dark theme with smooth page transitions
 
