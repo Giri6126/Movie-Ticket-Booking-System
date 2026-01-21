@@ -2,7 +2,7 @@
 
 A modern and minimal web app for booking movie tickets — built with Flask, styled with a dark cinematic theme, and featuring smooth transitions and downloadable PDF tickets with QR codes.
 
-✨ Features
+Features
 
 🎞️ Browse movies with posters
 
