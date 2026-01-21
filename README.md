@@ -6,7 +6,7 @@ Features
 
 Browse movies with posters
 
-🏢 Choose from popular theatres in Chennai
+Choose from popular theatres in Chennai
 
 ⏰ Select show timings and seats
 
