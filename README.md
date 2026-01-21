@@ -8,9 +8,9 @@ Browse movies with posters
 
 Choose from popular theatres in Chennai
 
-⏰ Select show timings and seats
+ Select show timings and seats
 
-💳 Fill in payment details (demo)
+Fill in payment details (demo)
 
 🧾 Download stylish PDF tickets with QR codes
 
