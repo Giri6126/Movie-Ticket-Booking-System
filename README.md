@@ -4,7 +4,7 @@ A modern and minimal web app for booking movie tickets — built with Flask, sty
 
 Features
 
-🎞️ Browse movies with posters
+Browse movies with posters
 
 🏢 Choose from popular theatres in Chennai
 
