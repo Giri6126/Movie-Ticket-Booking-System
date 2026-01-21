@@ -14,7 +14,7 @@ Fill in payment details (demo)
 
 Download stylish PDF tickets with QR codes
 
-🌙 Modern dark theme with smooth page transitions
+ Modern dark theme with smooth page transitions
 
 🛠️ Tech Stack
 
