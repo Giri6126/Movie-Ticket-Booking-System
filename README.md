@@ -24,7 +24,7 @@ Backend: Python (Flask)
 
 PDF & QR Generation: ReportLab, qrcode
 
-🎥 Theatres Featured
+Theatres Featured
 
 PVR Cinemas · Luxe · Escape · Palazzo · INOX · Abirami · Kamala · Devi Cineplex · Sathyam · Udhayam
 
