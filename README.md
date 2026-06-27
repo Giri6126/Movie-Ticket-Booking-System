@@ -28,7 +28,7 @@ PDF & QR Generation: ReportLab, qrcode
 
 PVR Cinemas · Luxe · Escape · Palazzo · INOX · Abirami · Kamala · Devi Cineplex · Sathyam · Udhayam
 
-🚀 How to Run Locally
+ How to Run Locally
 # 1️⃣ Clone this repository
 git clone https://github.com/yourusername/MovieTicketBookingSystem.git
 cd MovieTicketBookingSystem
