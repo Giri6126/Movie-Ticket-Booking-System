@@ -16,7 +16,7 @@ Download stylish PDF tickets with QR codes
 
  Modern dark theme with smooth page transitions
 
-🛠️ Tech Stack
+Tech Stack
 
 Frontend: HTML, CSS
 
